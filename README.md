@@ -1,49 +1,49 @@
-# Benchmark Kinerja FHE: OpenFHE vs. Microsoft SEAL pada Raspberry Pi 5
+# FHE Performance Benchmark: OpenFHE vs. Microsoft SEAL on Raspberry Pi 5
 
-Organizations ini berisi hasil dan analisis dari studi perbandingan kinerja antara dua *library* Fully Homomorphic Encryption (FHE) terkemuka: **OpenFHE** dan **Microsoft SEAL**.
+This organization contains the results and analysis from a performance comparison study between two leading Fully Homomorphic Encryption (FHE) libraries: **OpenFHE** and **Microsoft SEAL**.
 
-Seluruh *benchmark* dijalankan pada perangkat **Raspberry Pi 5** untuk mengevaluasi efisiensi dan skalabilitas kedua *library* pada perangkat *edge/IoT*.
+All benchmarks were executed on a **Raspberry Pi 5** device to evaluate the efficiency and scalability of both libraries on edge/IoT devices.
 
-## 📊 Tentang Proyek Ini
+## 📊 About This Project
 
-Tujuan utama dari proyek ini adalah untuk mengukur dan membandingkan kinerja *head-to-head* dari OpenFHE dan Microsoft SEAL dalam menjalankan protokol telemetri IoT yang spesifik.
+The primary objective of this project is to measure and compare the head-to-head performance of OpenFHE and Microsoft SEAL when executing a specific IoT telemetry protocol.
 
-Perbandingan ini berfokus pada tiga algoritma inti yang digunakan dalam protokol:
+This comparison focuses on three core algorithms used in the protocol:
 
-1.  **Algoritma 1: RoundInit (Inisialisasi & Enkripsi)**
-    * Mengukur *overhead* pembuatan *mask* acak dan enkripsi awal.
-2.  **Algoritma 2: NodeProcess (Operasi Homomorfik)**
-    * Mengukur kinerja inti FHE, yaitu penambahan *ciphertext-plaintext* (`EvalAdd` vs `add_plain_inplace`) secara berulang. Ini adalah metrik skalabilitas utama.
-3.  **Algoritma 3: RoundVerify (Dekripsi & Verifikasi)**
-    * Mengukur *overhead* dekripsi, *unmasking*, dan verifikasi data.
+1.  **Algorithm 1: RoundInit (Initialization & Encryption)**
+    * Measures the overhead of random mask generation and initial encryption.
+2.  **Algorithm 2: NodeProcess (Homomorphic Operation)**
+    * Measures the core FHE performance, specifically repeated ciphertext-plaintext addition (`EvalAdd` vs `add_plain_inplace`). This is the primary scalability metric.
+3.  **Algorithm 3: RoundVerify (Decryption & Verification)**
+    * Measures the overhead of decryption, unmasking, and data verification.
 
-Parameter kriptografi (BFV, N=8192, q=65537) dijaga tetap identik di kedua *library* untuk memastikan perbandingan yang adil.
+Cryptographic parameters (BFV, N=8192, q=65537) were kept identical across both libraries to ensure a fair comparison.
 
-## 🛠️ Teknologi yang Digunakan
+## 🛠️ Technology Stack
 
-* **Bahasa:** C++17
-* **Library FHE:**
+* **Language:** C++17
+* **FHE Libraries:**
     * OpenFHE
     * Microsoft SEAL
-* **Sistem Build:** CMake
+* **Build System:** CMake
 * **Hardware:** Raspberry Pi 5 (ARM64)
 * **OS:** Raspberry Pi OS (Debian 12 Bookworm)
 
-## 📈 Hasil (Ringkasan)
+## 📈 Results (Summary)
 
-Analisis data *benchmark* (dijalankan rata-rata 5 kali untuk jumlah node `n` dari 16 hingga 4096) menunjukkan temuan sebagai berikut:
+Analysis of the benchmark data (averaged over 5 runs for node counts `n` from 16 to 4096) shows the following findings:
 
-* **Overhead (Alg 1 & 3):** OpenFHE secara konsisten menunjukkan kinerja yang lebih cepat untuk operasi non-homomorfik seperti enkripsi awal dan dekripsi/verifikasi.
-* **Kinerja Homomorfik (Alg 2):** Microsoft SEAL secara signifikan lebih unggul dalam kinerja dan skalabilitas untuk operasi `NodeProcess`. Pada beban kerja 4096 node, SEAL terbukti **~2.5x lebih cepat** daripada OpenFHE.
+* **Overhead (Alg 1 & 3):** OpenFHE consistently demonstrated faster performance for non-homomorphic operations such as initial encryption and decryption/verification.
+* **Homomorphic Performance (Alg 2):** Microsoft SEAL was significantly superior in performance and scalability for the `NodeProcess` operation. At a workload of 4096 nodes, SEAL proved to be **~2.5x faster** than OpenFHE.
 
 ---
 
-## 🔒 Akses Kode Sumber
+## 🔒 Source Code Access
 
-File kode sumber lengkap (`IoT_FHE.cpp`, `benchmark_seal.cpp`, dan `CMakeLists.txt`) untuk *benchmark* ini tidak tersedia secara publik.
+The complete source code files (`IoT_FHE.cpp`, `benchmark_seal.cpp`, and `CMakeLists.txt`) for this benchmark are not publicly available.
 
-Untuk mendapatkan akses ke kodingan lengkap untuk tujuan akademik, penelitian, atau kolaborasi, silakan hubungi kontak di bawah ini:
+To obtain access to the complete code for academic, research, or collaboration purposes, please use the contact information below:
 
-* **Nama:** Ardea Himawan Nugroho
-* **No. Telepon/WA:** 085600009732
+* **Name:** Ardea Himawan Nugroho
+* **Phone/WA:** (+62) 85600009732
 * **Email:** ardeahnugroho@gmail.com
