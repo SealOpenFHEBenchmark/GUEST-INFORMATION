@@ -1,6 +1,6 @@
 # Benchmark Kinerja FHE: OpenFHE vs. Microsoft SEAL pada Raspberry Pi 5
 
-Repositori ini berisi hasil dan analisis dari studi perbandingan kinerja antara dua *library* Fully Homomorphic Encryption (FHE) terkemuka: **OpenFHE** dan **Microsoft SEAL**.
+Organizations ini berisi hasil dan analisis dari studi perbandingan kinerja antara dua *library* Fully Homomorphic Encryption (FHE) terkemuka: **OpenFHE** dan **Microsoft SEAL**.
 
 Seluruh *benchmark* dijalankan pada perangkat **Raspberry Pi 5** untuk mengevaluasi efisiensi dan skalabilitas kedua *library* pada perangkat *edge/IoT*.
 
@@ -40,7 +40,7 @@ Analisis data *benchmark* (dijalankan rata-rata 5 kali untuk jumlah node `n` dar
 
 ## 🔒 Akses Kode Sumber
 
-Sesuai permintaan, file kode sumber lengkap (`IoT_FHE.cpp`, `benchmark_seal.cpp`, dan `CMakeLists.txt`) untuk *benchmark* ini tidak tersedia secara publik di repositori ini.
+File kode sumber lengkap (`IoT_FHE.cpp`, `benchmark_seal.cpp`, dan `CMakeLists.txt`) untuk *benchmark* ini tidak tersedia secara publik.
 
 Untuk mendapatkan akses ke kodingan lengkap untuk tujuan akademik, penelitian, atau kolaborasi, silakan hubungi kontak di bawah ini:
 
